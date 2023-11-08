@@ -1,0 +1,17 @@
+apply from: '../app.gradle'
+
+android {
+    resourcePrefix 'video_'
+    namespace 'com.dokiwei.video'
+    defaultConfig {
+        if (!isRelease) {
+            applicationId "com.dokiwei.video"
+            versionCode 1
+            versionName "1.0"
+        }
+    }
+}
+
+dependencies {
+
+}

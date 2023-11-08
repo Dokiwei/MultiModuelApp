@@ -1,0 +1,17 @@
+apply from: '../app.gradle'
+
+android {
+    resourcePrefix 'setting_'
+    namespace 'com.dokiwei.setting'
+    defaultConfig {
+        if (!isRelease) {
+            applicationId "com.dokiwei.setting"
+            versionCode 1
+            versionName "1.0"
+        }
+    }
+}
+
+dependencies {
+
+}

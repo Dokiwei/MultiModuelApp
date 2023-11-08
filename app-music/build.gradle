@@ -1,0 +1,17 @@
+apply from: '../app.gradle'
+
+android {
+    resourcePrefix 'music_'
+    namespace 'com.dokiwei.music'
+    defaultConfig {
+        if (!isRelease) {
+            applicationId "com.dokiwei.music"
+            versionCode 1
+            versionName "1.0"
+        }
+    }
+}
+
+dependencies {
+
+}
