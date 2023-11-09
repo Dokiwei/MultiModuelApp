@@ -5,10 +5,10 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
+import com.alibaba.android.arouter.facade.annotation.Route
 import com.dokiwei.music.MusicActivity
 import com.dokiwei.setting.SettingActivity
 import com.dokiwei.video.VideoActivity
-
 class MainActivity : AppCompatActivity(), View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

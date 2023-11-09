@@ -7,6 +7,18 @@ import android.app.Application
  * @date 2023/11/8 20:20
  */
 object ModuleMediator {
+    const val IS_RELEASE = true
+
+    object ARouterConstants{
+        private const val SETTING_MODULE = "/setting/"
+        private const val MUSIC_MODULE = "/music/"
+        private const val VIDEO_MODULE = "/video/"
+
+        const val SETTING_ACTIVITY = SETTING_MODULE + "SettingActivity"
+        const val MUSIC_ACTIVITY = MUSIC_MODULE + "MusicActivity"
+        const val VIDEO_ACTIVITY = VIDEO_MODULE + "VideoActivity"
+    }
+
     const val ACTIVITY_SETTING_CLASS = "com.dokiwei.setting.SettingActivity"
     const val ACTIVITY_MUSIC_CLASS = "com.dokiwei.music.MusicActivity"
     const val ACTIVITY_VIDEO_CLASS = "com.dokiwei.video.VideoActivity"

@@ -236,3 +236,14 @@
 #-dontwarn com.tencent.bugly.**
 #-keep public class com.tencent.bugly.**{*;}
 #-keep class android.support.**{*;}
+
+# ARoute
+-keep public class com.alibaba.android.arouter.routes.**{*;}
+-keep public class com.alibaba.android.arouter.facade.**{*;}
+-keep class * implements com.alibaba.android.arouter.facade.template.ISyringe{*;}
+
+# 如果使用 byType 方法获取 Service，请添加以下规则来保护接口:
+-keep interface * implements com.alibaba.android.arouter.facade.template.IProvider
+
+# 如果使用单类型注入，即没有定义接口来实现 IProvider，则需要添加以下规则来保护实现
+# -keep class * implements com.alibaba.android.arouter.facade.template.IProvider

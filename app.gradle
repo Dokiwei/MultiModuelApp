@@ -1,10 +1,16 @@
-plugins.apply('org.jetbrains.kotlin.android')
-if (isRelease) {
-    plugins.apply('com.android.library')
-} else {
-    plugins.apply('com.android.application')
-}
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
 
+if (isRelease) {
+    apply plugin: 'com.android.library'
+} else {
+    apply plugin: 'com.android.application'
+}
+kapt {
+    arguments {
+        arg("AROUTER_MODULE_NAME", project.getName())
+    }
+}
 android {
     compileSdk 34
 
@@ -13,6 +19,10 @@ android {
         targetSdk 34
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildFeatures{
+        viewBinding true
     }
 
     buildTypes {
@@ -30,12 +40,18 @@ android {
 }
 
 dependencies {
+    //ARouter
+    implementation libs.arouter.api
+    kapt libs.com.alibaba.arouter.compiler3
 
     implementation libs.core.ktx
     implementation libs.appcompat
     implementation libs.material
     implementation libs.constraintlayout
+
+    //unit test
     testImplementation libs.junit
+    //android test
     androidTestImplementation libs.androidx.test.ext.junit
     androidTestImplementation libs.espresso.core
 
